@@ -50,15 +50,63 @@ img {
     width: 100%;
 }
 
+blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+
+blockquote p {
+    display: inline;
+}
+
+header {
+    border-bottom: solid 1px #ccc;
+}
+
+header,
+footer {
+    padding: 0.5rem 1rem;
+}
+
+main {
+    min-height: 80vh;
+}
+
+section {
+    border-bottom: solid 1px #ccc;
+    margin: 1rem auto;
+    width: 100%;
+}
+
 .wrapper {
+    display: flex;
+    flex-wrap: wrap;
     margin: 0 auto;
     max-width: 90rem;
+    padding: 0 1rem;
 }
 
 /* This is using BEM Syntax */
-.wrapper--image {
+.wrapper--image,
+.floats .wrapper--image {
     margin: auto;
     max-width: 20rem;
+}
+
+.floats .wrapper--image {
+    max-width: 33rem;
 }
 
 .code {
@@ -74,4 +122,21 @@ footer {
     color: white;
     margin: 2rem 0 0;
     padding: 1rem;
+}
+
+.background-image {
+    align-items: center;
+    background: #ccc url('../images/volkswagen.jpg') 0 0 no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    height: 420px;
+    margin-bottom: 1rem;
+    width: 619px;
+}
+
+.background-image .highlight {
+    background-color: yellow;
+    height: auto;
+    padding: 8px;
 }
